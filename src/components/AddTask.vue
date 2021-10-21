@@ -1,4 +1,3 @@
-
 <template>
   <form @submit="onSubmit" class="add-form">
     <div class="form-control">
@@ -34,8 +33,33 @@ export default {
       day: "",
       time: "",
       reminder: false,
-    };
+    }
   },
+  methods: {
+    onSubmit(e) {
+      e.preventDefault()
+
+      if(!this.text){
+        alert('Please add a task')
+        return
+      }
+
+      const newTask = {
+        text: this.text,
+        day: this.day,
+        time: this.time,
+        reminder:this.reminder
+      }
+
+      this.$emit('add-task',newTask)
+
+      this.text = ''
+      this.day = ''
+      this.time = ''
+      this.reminder = false
+      
+    }
+  }
 };
 </script>
 
