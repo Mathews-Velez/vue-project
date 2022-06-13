@@ -1,5 +1,5 @@
 <template>
-  <form @submit="onSubmit" class="add-form">
+  <form @submit="onSubmit" class="add-form">    
     <div class="form-control">
       <label>Task</label>
       <input type="text" v-model="text" name="text" placeholder="Add Task" />
@@ -7,12 +7,12 @@
 
     <div class="form-control">
       <label>Day</label>
-      <input type="text" v-model="day" name="day" placeholder="Add Day" />
+      <input type="date" v-model="day" name="day" placeholder="Add Day" />
     </div>
 
     <div class="form-control">
       <label>Time</label>
-      <input type="text" v-model="time" name="time" placeholder="Add Time" />
+      <input type="time" v-model="time" name="time" placeholder="Add Time" />
     </div>
 
     <div class="form-control form-control-check">
@@ -20,7 +20,7 @@
       <input type="checkbox" v-model="reminder" name="reminder" />
     </div>
 
-    <input type="submit" value="Save Task" class="btn btn-block" />
+    <input type="submit" value="Save Task" class="btn btn-block " />
   </form>
 </template>
 
@@ -91,5 +91,8 @@ export default {
 .form-control-check input {
   flex: 2;
   height: 20px;
+}
+.btn-block{
+  background-color:green;
 }
 </style>

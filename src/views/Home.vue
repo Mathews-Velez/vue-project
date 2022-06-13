@@ -36,6 +36,11 @@ export default {
       const data = await res.json()
       this.tasks = [...this.tasks, data]
     },
+    async updateTask(id) {
+      //make an edit component similar to add task
+      //  with the option to save the newly modified version or to remove it comletely from the tasks
+      //  when calling the update task component it should also have as a parameter the task that is being updated
+    },
     async deleteTask(id) {
       if (confirm('Are you sure?')) {
         const res = await fetch(`api/tasks/${id}`, {
